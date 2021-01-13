@@ -1,0 +1,28 @@
+.contaienr {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 100vh;
+}
+
+.contaienr > div {
+  border-bottom: 1px solid #b9d6fa;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 0 0 15px;
+}
+
+.blink {
+  animation: blinker 1.5s linear infinite;
+  height: 40px;
+  border-bottom: 1px solid #b9d6fa;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
