@@ -13,6 +13,7 @@
   align-items: center;
   min-height: 32px;
   padding: 0 0 0 15px;
+  padding: 5px 15px 5px 15px;
 }
 
 .blink {
@@ -25,4 +26,13 @@
   50% {
     opacity: 0;
   }
+}
+
+.input {
+  background: #fff;
+  border: #fff;
+  outline: none;
+  width: 100%;
+  font-size: 30px;
+  color: rgb(22, 22, 22);
 }
