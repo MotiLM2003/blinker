@@ -11,7 +11,13 @@ console.log($(window).width());
 const screen = $(window).width();
 let maxChar = 0;
 
-if (screen >= 1200) {
+if (screen >= 2400) {
+  maxChar = 200;
+} else if (screen >= 2000) {
+  maxChar = 120;
+} else if (screen >= 1700) {
+  maxChar = 80;
+} else if (screen >= 1200) {
   maxChar = 78;
 } else if (screen >= 1000) {
   maxChar = 66;
