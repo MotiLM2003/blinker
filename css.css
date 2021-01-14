@@ -36,3 +36,22 @@
   font-size: 30px;
   color: rgb(22, 22, 22);
 }
+
+/* .buttons {
+  position: fixed;
+  bottom: 5px;
+  right: 0;
+  background: red;
+  z-index: 11;
+} */
+
+img {
+  width: 220px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.fade {
+  width: 340px;
+}
