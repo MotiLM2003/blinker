@@ -7,7 +7,7 @@
 }
 
 .contaienr > div {
-  border-bottom: 1px solid #b9d6fa;
+  border-bottom: 2px solid #b9d6fa;
   font-size: 30px;
   display: flex;
   align-items: bottom;
@@ -17,14 +17,20 @@
 }
 
 .blink {
-  animation: blinker 1.5s linear infinite;
+  animation: blinker 3.5s linear infinite;
   height: 40px;
   border-bottom: 1px solid #b9d6fa;
 }
 
 @keyframes blinker {
+  0% {
+    background: #fff;
+  }
   50% {
-    opacity: 0;
+    background: #000;
+  }
+  100% {
+    background: #fff;
   }
 }
 
@@ -45,13 +51,48 @@
   z-index: 11;
 } */
 
-img {
-  width: 220px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+.buttons {
+  position: fixed;
+  bottom: -130px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .fade {
   width: 340px;
+}
+
+.rounded {
+  width: 340px;
+  height: 340px;
+  background: #fff;
+  border-radius: 50%;
+  border: 11px solid #ccc;
+}
+
+.buttons img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+#v-icon {
+  opacity: ;
+  font-size: 15em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon {
+  color: green;
 }
