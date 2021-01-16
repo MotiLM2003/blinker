@@ -85,7 +85,6 @@
 }
 
 #v-icon {
-  opacity: ;
   font-size: 15em;
   position: absolute;
   left: 50%;
@@ -95,4 +94,42 @@
 
 .icon {
   color: green;
+}
+
+@media screen and (max-height: 1000px) {
+  .rounded {
+    width: 140px;
+    height: 140px;
+  }
+
+  .buttons {
+    bottom: -68px;
+  }
+
+  .buttons img {
+    width: 164px;
+  }
+
+  #v-icon {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  .rounded {
+    width: 100px;
+    height: 100px;
+  }
+
+  .buttons {
+    bottom: -55px;
+  }
+
+  .buttons img {
+    width: 164px;
+  }
+
+  #v-icon {
+    font-size: 4rem;
+  }
 }

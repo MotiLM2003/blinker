@@ -6,13 +6,10 @@ const getInputs = () => {
   inputs[lastIndex - 1];
 };
 
-console.log($(window).width());
-
 const screen = $(window).width();
 let maxChar = 0;
-
 if (screen >= 2400) {
-  maxChar = 200;
+  maxChar = 1800;
 } else if (screen >= 2000) {
   maxChar = 120;
 } else if (screen >= 1700) {
@@ -26,8 +23,27 @@ if (screen >= 2400) {
 } else if (screen >= 600) {
   maxChar = 35;
 } else if (screen >= 400) {
-  maxChar = 23;
+  maxChar = 22;
+} else if (screen >= 300) {
+  maxChar = 20;
+} else if (screen >= 270) {
+  maxChar = 0;
 }
+
+const clickEvent = () => {
+  btnContaienr.style.background = 'transparent';
+  $(btnContaienr).addClass('blink');
+  document
+    .getElementById('button-container')
+    .removeEventListener('click', clickEvent);
+
+  setTimeout(() => {
+    $(thanks).fadeOut(1000);
+
+    $(icon).fadeIn(1000);
+    $(btnContaienr).removeClass('blink');
+  }, 5000);
+};
 
 const dade = document.getElementById('fade');
 const thanks = document.getElementById('thanks');
@@ -35,17 +51,10 @@ const btnContaienr = document.getElementById('button-container');
 const icon = document.getElementById('v-icon');
 let list = document.querySelectorAll('.child');
 $(icon).fadeOut(0);
-document.getElementById('button-container').addEventListener('click', () => {
-  //   fade.classList.remove('hide');
-  btnContaienr.style.background = 'transparent';
-  $(btnContaienr).addClass('blink');
-  setTimeout(() => {
-    $(thanks).fadeOut(1000);
-    // $('#v-icon').fadeIn();
-    $(icon).fadeIn(1000);
-    $(btnContaienr).removeClass('blink');
-  }, 5000);
-});
+document
+  .getElementById('button-container')
+  .addEventListener('click', clickEvent);
+
 getInputs();
 
 $(inputs[currentIndex]).focus();
@@ -57,11 +66,8 @@ jQuery.extend(jQuery.expr[':'], {
 });
 
 $(document).on('keyup', 'input,select', function (e) {
-  console.log($(this).width(), $(this).val().length);
   if (e.which == 8 && $(this).val() === '') {
-    console.log($(this).parent().prev().html());
     const prevInput = $(this).parent().prev().first();
-    console.log(prevInput.html());
     var all = $(':focusable');
     if (currentIndex <= 0) return;
     currentIndex -= 1;
