@@ -31,6 +31,24 @@ if (screen >= 2400) {
 }
 
 const clickEvent = () => {
+  let hasLetters = false;
+  $('input[type="text"]').each(function (index) {
+    let me = $(this);
+
+    const value = me.val();
+    if (value !== '') {
+      hasLetters = true;
+    }
+  });
+
+  if (!hasLetters) {
+    $('#arrow').addClass('blink2');
+    setTimeout(() => {
+      $('#arrow').removeClass('blink2');
+    }, 2500);
+    return;
+  }
+  $('input[type="text"]').css({ color: 'white' }).attr('disabled', 'disabled');
   btnContaienr.style.background = 'transparent';
   $(btnContaienr).addClass('blink');
   document

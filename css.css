@@ -16,10 +16,40 @@
   padding: 5px 15px 5px 15px;
 }
 
+input[type='text'] {
+  color: #000;
+  transition: all 0.5s;
+}
+
+#arrow {
+  position: absolute;
+  font-size: 3rem;
+  top: 0.1rem;
+  left: 4rem;
+  color: red;
+  opacity: 0;
+}
+
+.blink2 {
+  animation: blink2 2s infinite;
+}
+
 .blink {
   animation: blinker 3.5s linear infinite;
   height: 40px;
   border-bottom: 1px solid #b9d6fa;
+}
+
+@keyframes blink2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes blinker {
