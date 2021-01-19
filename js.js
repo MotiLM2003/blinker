@@ -123,7 +123,7 @@ $(document).on('keydown', 'input,select', function (e) {
 
 const isEnglish = (text) => {
   const paragraph = text;
-  const reg = '^[a-zA-Z0-9 ,;./]*$';
+  const reg = '^[a-zA-Z0-9 ,;./!,'/]*$';
   const found = paragraph.match(reg);
 
   return found;
