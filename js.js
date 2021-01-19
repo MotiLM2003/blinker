@@ -43,12 +43,13 @@ const clickEvent = () => {
 
   if (!hasLetters) {
     $('#arrow').addClass('blink2');
+    $('#first').focus();
     setTimeout(() => {
       $('#arrow').removeClass('blink2');
     }, 2500);
     return;
   }
-  $('input[type="text"]').css({ color: 'white' }).attr('disabled', 'disabled');
+
   btnContaienr.style.background = 'transparent';
   $(btnContaienr).addClass('blink');
   document
@@ -57,7 +58,9 @@ const clickEvent = () => {
 
   setTimeout(() => {
     $(thanks).fadeOut(1000);
-
+    $('input[type="text"]')
+      .css({ color: 'white' })
+      .attr('disabled', 'disabled');
     $(icon).fadeIn(1000);
     $(btnContaienr).removeClass('blink');
   }, 5000);
@@ -83,13 +86,16 @@ jQuery.extend(jQuery.expr[':'], {
   },
 });
 
-$(document).on('keyup', 'input,select', function (e) {
+$(document).on('keydown', 'input,select', function (e) {
   if (e.which == 8 && $(this).val() === '') {
-    const prevInput = $(this).parent().prev().first();
-    var all = $(':focusable');
-    if (currentIndex <= 0) return;
-    currentIndex -= 1;
-    all.eq(currentIndex).focus();
+    console.log('in delete');
+    const prevInput = $(this).parent().prev().first().find('input');
+    prevInput.focus();
+    console.log(prevInput.html());
+    // var all = $(':focusable');
+    // if (currentIndex <= 0) return;
+    // currentIndex -= 1;
+    // all.eq(currentIndex).focus();
   }
   if (e.which == 13 || $(this).val().length >= maxChar) {
     currentIndex += 1;

@@ -3,7 +3,10 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 10px;
   width: 100%;
-  height: 100vh;
+  max-height: 65.5vh;
+  scroll-x: none;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .contaienr > div {
@@ -18,7 +21,7 @@
 
 input[type='text'] {
   color: #000;
-  transition: all 0.5s;
+  transition: all 2.5s;
 }
 
 #arrow {
@@ -29,13 +32,25 @@ input[type='text'] {
   color: red;
   opacity: 0;
 }
+.link {
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  font-size: 1.3rem;
+  transform: translate(-50%, -50%);
+  font-family: 'Times New Roman', Times, serif;
+}
 
+.link a {
+  text-decoration: underline;
+  color: darkblue;
+}
 .blink2 {
   animation: blink2 2s infinite;
 }
 
 .blink {
-  animation: blinker 3.5s linear infinite;
+  animation: blinker 1.5s linear infinite;
   height: 40px;
   border-bottom: 1px solid #b9d6fa;
 }
@@ -133,7 +148,7 @@ input[type='text'] {
   }
 
   .buttons {
-    bottom: -68px;
+    bottom: -33px;
   }
 
   .buttons img {
@@ -144,22 +159,42 @@ input[type='text'] {
     font-size: 6rem;
   }
 }
+@media screen and (max-width: 639px) {
+  .container {
+    min-height: 71.5vh !important;
+  }
+}
 
-@media screen and (max-height: 640px) {
+@media screen and (max-height: 641px) {
   .rounded {
     width: 100px;
     height: 100px;
   }
 
   .buttons {
-    bottom: -55px;
+    bottom: -26px;
   }
-
   .buttons img {
     width: 164px;
   }
 
   #v-icon {
     font-size: 4rem;
+  }
+
+  .link {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 511px) {
+  .link {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .link {
+    font-size: 0.7rem;
   }
 }
