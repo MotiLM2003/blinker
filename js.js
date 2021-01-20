@@ -6,28 +6,7 @@ const getInputs = () => {
   inputs[lastIndex - 1];
 };
 
-var fontSize = 12;
-var test = document.getElementById('Test');
-test.style.fontSize = fontSize;
-var height = test.clientHeight + 1 + 'px';
-var width = test.clientWidth + 250 + 'px';
-
-console.log(height, width);
-
-function getTextWidth(text, font) {
-  // re-use canvas object for better performance
-  var canvas =
-    getTextWidth.canvas ||
-    (getTextWidth.canvas = document.createElement('canvas'));
-  var context = canvas.getContext('2d');
-  context.font = font;
-  var metrics = context.measureText(text);
-  return metrics.width;
-}
-
-console.log(getTextWidth('wrewrewrewrwerewrewer', '16px arial'));
-
-const screen = $(window).width() - 20;
+const screen = $(window).width();
 let maxChar = 0;
 
 console.log(screen);
