@@ -6,8 +6,33 @@ const getInputs = () => {
   inputs[lastIndex - 1];
 };
 
-const screen = $(window).width();
+var fontSize = 12;
+var test = document.getElementById('Test');
+test.style.fontSize = fontSize;
+var height = test.clientHeight + 1 + 'px';
+var width = test.clientWidth + 250 + 'px';
+
+console.log(height, width);
+
+function getTextWidth(text, font) {
+  // re-use canvas object for better performance
+  var canvas =
+    getTextWidth.canvas ||
+    (getTextWidth.canvas = document.createElement('canvas'));
+  var context = canvas.getContext('2d');
+  context.font = font;
+  var metrics = context.measureText(text);
+  return metrics.width;
+}
+
+console.log(getTextWidth('wrewrewrewrwerewrewer', '16px arial'));
+
+const screen = $(window).width() - 20;
 let maxChar = 0;
+
+console.log(screen);
+
+// return maxChar > screen;
 if (screen >= 2400) {
   maxChar = 1800;
 } else if (screen >= 2000) {
@@ -27,7 +52,7 @@ if (screen >= 2400) {
 } else if (screen >= 300) {
   maxChar = 20;
 } else if (screen >= 270) {
-  maxChar = 0;
+  maxChar = 10;
 }
 
 const clickEvent = () => {
@@ -95,7 +120,8 @@ $(document).on('keydown', 'input,select', function (e) {
     // var all = $(':focusable');
     // if (currentIndex <= 0) return;
     // currentIndex -= 1;
-    // all.eq(currentIndex).focus();
+    // al
+    l.eq(currentIndex).focus();
   }
   if (e.which == 13 || $(this).val().length >= maxChar) {
     currentIndex += 1;
@@ -105,6 +131,7 @@ $(document).on('keydown', 'input,select', function (e) {
       );
       getInputs();
     }
+
     e.preventDefault();
     // Get all focusable elements on the page
     var $canfocus = $(':focusable');
