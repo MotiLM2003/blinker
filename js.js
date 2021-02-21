@@ -3,29 +3,6 @@ $(document).ready(function () {
   quill = new Quill('#editor', { placeholder: '' });
   quill.focus();
   // $('.ql-editor p').text('a').focus();
-
-  $('#bookmarkme').click(function () {
-    if (window.sidebar && window.sidebar.addPanel) {
-      // Mozilla Firefox Bookmark
-      window.sidebar.addPanel(document.title, window.location.href, '');
-    } else if (window.external && 'AddFavorite' in window.external) {
-      // IE Favorite
-      window.external.AddFavorite(location.href, document.title);
-    } else if (window.opera && window.print) {
-      // Opera Hotlist
-      this.title = document.title;
-      return true;
-    } else {
-      // webkit - safari/chrome
-      alert(
-        'Press ' +
-          (navigator.userAgent.toLowerCase().indexOf('mac') != -1
-            ? 'Command/Cmd'
-            : 'CTRL') +
-          ' + D to bookmark this page.'
-      );
-    }
-  });
 });
 
 const clickEvent = () => {
@@ -85,7 +62,6 @@ jQuery.extend(jQuery.expr[':'], {
 });
 
 function contains_heb(str) {
-  console.log(str);
   return /[\u0590-\u05FF]/.test(str);
 }
 
@@ -98,35 +74,4 @@ $(document).on('keyup', function (e) {
       me.addClass('rtl');
     }
   });
-  // if (e.which == 8 && $(this).val() === '') {
-  //   console.log('in delete');
-  //   const prevInput = $(this).parent().prev().first().find('input');
-  //   prevInput.focus();
-  //   console.log(prevInput.html());
-  //   // var all = $(':focusable');
-  //   // if (currentIndex <= 0) return;
-  //   // currentIndex -= 1;
-  //   // al
-  //   l.eq(currentIndex).focus();
-  // }
-  // if (e.which == 13 || $(this).val().length >= maxChar) {
-  //   currentIndex += 1;
-  //   if (this === inputs[lastIndex - 1]) {
-  //     $('.contaienr').append(
-  //       '<div><input type="text" class="input" value=""  /></div>'
-  //     );
-  //   }
-  //   e.preventDefault();
-  //   // Get all focusable elements on the page
-  //   var $canfocus = $(':focusable');
-  //   var index = $canfocus.index(this) + 1;
-  //   if (index >= $canfocus.length) index = 0;
-  //   $canfocus.eq(index).focus();
-  // }
-  // var me = $(this);
-  // if (isEnglish(me.val())) {
-  //   me.css('text-align', 'left');
-  // } else {
-  //   me.css('text-align', 'right');
-  // }
 });
