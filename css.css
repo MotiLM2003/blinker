@@ -1,3 +1,12 @@
+body {
+  background: rgb(254, 255, 153);
+  background: linear-gradient(rgba(254, 255, 153, 1), rgba(254, 255, 153, 0.6));
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 50%;
+  min-height: 100vh;
+}
 .contaienr {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -9,7 +18,6 @@
 }
 
 .contaienr > div {
-  border-bottom: 2px solid #b9d6fa;
   font-size: 30px;
   display: flex;
   align-items: bottom;
@@ -26,9 +34,9 @@ input[type='text'] {
 #arrow {
   position: absolute;
   font-size: 3rem;
-  top: 0.1rem;
-  left: 4rem;
-  color: red;
+  top: 0.8rem;
+  left: 3rem;
+  color: crimson;
   opacity: 0;
 }
 .link {
@@ -197,7 +205,7 @@ input[type='text'] {
 }
 @media screen and (max-width: 511px) {
   .link {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -208,7 +216,7 @@ input[type='text'] {
   }
 
   .link {
-    font-size: 0.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -224,4 +232,32 @@ input[type='text'] {
   height: auto;
   width: auto;
   white-space: nowrap; /* Thanks to Herb Caudill comment */
+}
+
+.ql-editor {
+  width: 100% !important;
+}
+
+#bookmarkme {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.fa-star {
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.rtl {
+  text-align: right;
 }
