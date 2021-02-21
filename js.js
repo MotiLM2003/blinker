@@ -89,7 +89,7 @@ function contains_heb(str) {
   return /[\u0590-\u05FF]/.test(str);
 }
 
-$(document).on('keydown', function (e) {
+$(document).on('keyup', function (e) {
   $('.ql-editor p').each(function () {
     var me = $(this);
     const isHeb = contains_heb(me.text());

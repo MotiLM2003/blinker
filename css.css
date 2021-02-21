@@ -236,8 +236,12 @@ input[type='text'] {
 
 .ql-editor {
   width: 100% !important;
+  word-wrap: break-all;
 }
-
+.ql-editor p {
+  word-wrap: break-word;
+  width: 82svw;
+}
 #bookmarkme {
   position: absolute;
   top: 2rem;
@@ -260,4 +264,5 @@ input[type='text'] {
 
 .rtl {
   text-align: right;
+  direction: rtl;
 }
