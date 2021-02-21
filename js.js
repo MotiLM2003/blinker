@@ -51,7 +51,7 @@ const clickEvent = () => {
 
   setTimeout(() => {
     $(thanks).fadeOut(1000);
-    $('.ql-editor p').fadeOut(500);
+    $('.ql-editor p').fadeOut(1500);
     quill.disable();
     $(icon).fadeIn(1000);
     $(btnContaienr).removeClass('blink');
