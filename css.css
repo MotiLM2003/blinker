@@ -8,9 +8,6 @@ body {
   min-height: 100vh;
 }
 .contaienr {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 10px;
   width: 100%;
   max-height: 45.5vh;
   overflow: scroll;
@@ -38,14 +35,6 @@ input[type='text'] {
   left: 3rem;
   color: crimson;
   opacity: 0;
-}
-.link {
-  position: fixed;
-  bottom: 5px;
-  left: 50%;
-  font-size: 1.3rem;
-  transform: translate(-50%, -50%);
-  font-family: 'Times New Roman', Times, serif;
 }
 
 .link a {
@@ -106,12 +95,23 @@ input[type='text'] {
   z-index: 11;
 } */
 
-.buttons {
+.toolbar {
   position: fixed;
-  bottom: -130px;
+  bottom: 1rem;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -0%);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+}
+.buttons {
+}
+
+.link {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .fade {
@@ -129,7 +129,7 @@ input[type='text'] {
 .buttons img {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 44%;
   transform: translate(-50%, -50%);
 
   border-radius: 50%;
@@ -182,7 +182,8 @@ input[type='text'] {
     bottom: -26px;
   }
   .buttons img {
-    width: 133px;
+    width: 92px;
+    top: 37%;
   }
 
   #v-icon {
@@ -190,7 +191,7 @@ input[type='text'] {
   }
 
   .link {
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
 }
 
@@ -225,7 +226,7 @@ input[type='text'] {
 
 @media screen and (max-width: 400px) {
   .link {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 
