@@ -112,6 +112,10 @@ input[type='text'] {
 .buttons {
 }
 
+.fake {
+  display: none;
+}
+
 .link {
   font-family: 'Times New Roman', Times, serif;
 }
