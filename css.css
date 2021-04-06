@@ -1,7 +1,6 @@
 body {
   background: rgb(254, 255, 153);
   background: linear-gradient(rgba(254, 255, 153, 1), rgba(254, 255, 153, 0.6));
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 50%;
@@ -12,13 +11,14 @@ body {
   max-height: 30.5vh;
   overflow: scroll;
   overflow-x: hidden;
+  min-height: calc(67vh);
 }
 
 .contaienr > div {
   font-size: 30px;
   display: flex;
   align-items: bottom;
-  min-height: 32px;
+
   padding: 0 0 0 15px;
   padding: 5px 15px 5px 15px;
 }
@@ -98,10 +98,8 @@ input[type='text'] {
 .toolbar {
   z-index: 10;
   overflow: hidden;
-  position: fixed;
+
   bottom: 1rem;
-  left: 50%;
-  transform: translate(-50%, -0%);
   cursor: pointer;
   display: flex;
   flex-direction: column;
