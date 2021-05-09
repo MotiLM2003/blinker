@@ -54,7 +54,7 @@ input[type='text'] {
 }
 
 .blink {
-  animation: blinker 1.5s linear infinite;
+  animation: blinker 1.4s linear infinite;
   height: 40px;
   border-bottom: 1px solid #b9d6fa;
 }
