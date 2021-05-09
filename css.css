@@ -12,6 +12,7 @@ body {
   background-size: cover;
   background-position: 0% 50%;
   overflow-x: hidden;
+  overflow-y: hidden;
   min-height: 100vh;
 }
 .contaienr {
@@ -23,6 +24,8 @@ body {
 .parent {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .contaienr > div {
   font-size: 30px;
@@ -106,6 +109,11 @@ input[type='text'] {
 } */
 
 .toolbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .buttons {
 }
@@ -123,19 +131,14 @@ input[type='text'] {
 }
 
 .rounded {
-  width: 340px;
-  height: 340px;
+  width: 260px;
+  height: 260px;
   background: #fff;
   border-radius: 50%;
   border: 11px solid #ccc;
 }
 
 .buttons img {
-  position: absolute;
-  left: 50%;
-  top: 44%;
-  transform: translate(-50%, -50%);
-
   border-radius: 50%;
 }
 
@@ -144,12 +147,9 @@ input[type='text'] {
 }
 
 #v-icon {
-  font-size: 15em;
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  font-size: 13em;
+
   display: none;
-  transform: translate(-50%, -50%);
 }
 
 .icon {
@@ -187,7 +187,6 @@ input[type='text'] {
   }
   .buttons img {
     width: 92px;
-    top: 37%;
   }
 
   #v-icon {
@@ -195,10 +194,15 @@ input[type='text'] {
   }
 
   .link {
+    margin-top: 15px;
     font-size: 1rem;
   }
 }
-
+#button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-height: 550px) {
   .contaienr {
     max-height: 66.7vh;
